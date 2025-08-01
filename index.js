@@ -14,14 +14,13 @@ const initialBoard = [
 
 let board = new Proxy(initialBoard, {
     set(target, value, prop) {
-        console.log("target - value - prop", target, value, prop)
         target[prop] = value
         renderBoard()
         return true
     },
-    get(target, property, receiver) {
-        console.log("target, property, receiver --", target, property, receiver)
-    }
+    // get(target, property, receiver) {
+    //     console.log("target, property, receiver --", target, property, receiver)
+    // }
 })
 
 const chessboard = document.getElementById('chessboard');
